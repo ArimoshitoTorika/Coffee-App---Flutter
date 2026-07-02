@@ -40,7 +40,7 @@ class _splashState extends State<splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFFF5E6D3),
+        color: Color(0xFFFFF8F5),
         child: Center(
           child: ClipRRect(borderRadius: BorderRadius.circular(80),child: Image.asset('assets/images/bean_brew.png',width: 160,)),
         ),
