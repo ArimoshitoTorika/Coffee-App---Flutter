@@ -24,14 +24,29 @@ class splash extends StatefulWidget {
 }
 
 class _splashState extends State<splash> {
-  void initState(){
+
+  void initState() {
     super.initState();
-    _NavToHomePage();
+    _NavLogin();
   }
-  void _NavToHomePage(){
-    Future.delayed(const Duration(seconds: 3),(){
-      if(mounted){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Loginscreen()));
+
+  void _NavLogin() {
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                Loginscreen(),transitionsBuilder: (context,animation,secondaryAnimation,child){
+              return SlideTransition(position: Tween<Offset>(
+                begin: const Offset(0.0, 1.0), // starts off-screen bottom
+                end: Offset.zero,
+              ).animate(CurvedAnimation(parent: animation, curve: Curves.easeInOut)),
+                child: child,);
+          },transitionDuration: const Duration(milliseconds: 500)
+          ),
+
+        );
       }
     });
   }
@@ -42,10 +57,12 @@ class _splashState extends State<splash> {
       body: Container(
         color: Color(0xFFFFF8F5),
         child: Center(
-          child: ClipRRect(borderRadius: BorderRadius.circular(80),child: Image.asset('assets/images/bean_brew.png',width: 160,)),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(80),
+            child: Image.asset('assets/images/bean_brew.png', width: 160),
+          ),
         ),
       ),
     );
   }
 }
-

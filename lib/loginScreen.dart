@@ -22,7 +22,7 @@ class _LoginscreenState extends State<Loginscreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 140),
+                SizedBox(height: 120),
                 Align(
                   alignment: Alignment.topCenter,
                   child: Container(
@@ -83,7 +83,7 @@ class _LoginscreenState extends State<Loginscreen> {
                                 SizedBox(height: 20),
                                 Align(
                                   alignment: Alignment.topLeft,
-                                  child: Text("Email Address"),
+                                  child: Text("Email Address",style: TextStyle(color: MyColorLib.primary),),
                                 ),
                                 SizedBox(height: 5),
                                 Loginfield(
@@ -103,8 +103,6 @@ class _LoginscreenState extends State<Loginscreen> {
                                           color: MyColorLib.primary,
                                         ),
                                       ),
-
-                                      // SizedBox(width: 115),
                                       Align(
                                         child: TextButton(
                                           onPressed: test,
@@ -236,7 +234,6 @@ class _LoginscreenState extends State<Loginscreen> {
                       ],
                     ),
                   ),
-
                 ),
                 SizedBox(height: 20,),
                 SizedBox(width: 350,
