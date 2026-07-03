@@ -80,7 +80,7 @@ class _LoginscreenState extends State<Loginscreen> {
                             width: 320,
                             child: Column(
                               children: [
-                                SizedBox(height: 10),
+                                SizedBox(height: 20),
                                 Align(
                                   alignment: Alignment.topLeft,
                                   child: Text("Email Address"),
@@ -125,7 +125,7 @@ class _LoginscreenState extends State<Loginscreen> {
                                   hintText: '••••••••',
                                   fieldIcon: Icons.lock_outline,
                                 ),
-                                SizedBox(height: 30),
+                                SizedBox(height: 20),
                                 SizedBox(
                                   width: 350,
                                   child: ElevatedButton(
@@ -151,22 +151,83 @@ class _LoginscreenState extends State<Loginscreen> {
                                       Expanded(
                                         child: Divider(
                                           color: MyColorLib.secondary,
+                                          thickness: 2,
                                         ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                           horizontal: 8.0,
                                         ),
-                                        child: Text("Or continue with"),
+                                        child: Text(
+                                          "Or continue with",
+                                          style: TextStyle(
+                                            color: MyColorLib.primary,
+                                          ),
+                                        ),
                                       ),
                                       Expanded(
                                         child: Divider(
                                           color: MyColorLib.secondary,
+                                          thickness: 2,
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
+                                SizedBox(height: 20),
+                                SizedBox(
+                                  width: 350,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Expanded(
+                                        child: ElevatedButton(
+                                          onPressed: test,
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Color(0xFFFEFEFF),
+                                            foregroundColor: MyColorLib.primary,
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 14,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(14),
+                                              side: BorderSide(
+                                                color: MyColorLib.secondary,
+                                                width: 2,
+                                              ),
+                                            ),
+                                          ),
+                                          child: Text("Google"),
+                                        ),
+                                      ),
+                                      SizedBox(width: 16),
+                                      Expanded(
+                                        child: ElevatedButton(
+                                          onPressed: test,
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Color(0xFFFEFEFF),
+                                            foregroundColor: MyColorLib.primary,
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 14,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(14),
+                                              side: BorderSide(
+                                                color: MyColorLib.secondary,
+                                                width: 2,
+                                              ),
+                                            ),
+                                          ),
+                                          child: Text("Phone"),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 30,),
 
                               ],
                             ),
@@ -175,7 +236,18 @@ class _LoginscreenState extends State<Loginscreen> {
                       ],
                     ),
                   ),
+
                 ),
+                SizedBox(height: 20,),
+                SizedBox(width: 350,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('New to Bean & Brew?'),
+                      TextButton(onPressed: test, child: Text('Create Account',style: TextStyle(color: MyColorLib.primary),))
+                    ],
+                  ),
+                )
               ],
             ),
           ),
