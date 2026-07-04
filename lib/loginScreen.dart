@@ -1,5 +1,7 @@
 import 'package:coffee_app/Style/color.dart';
+import 'package:coffee_app/Widgets/appLogo.dart';
 import 'package:coffee_app/Widgets/loginField.dart';
+
 import 'package:flutter/material.dart';
 
 class Loginscreen extends StatefulWidget {
@@ -18,29 +20,14 @@ class _LoginscreenState extends State<Loginscreen> {
       body: Center(
         child: Expanded(
           child: Container(
-            color: Color(0xFFFFF8F5),
+            color: MyColorLib.bgColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(height: 120),
                 Align(
                   alignment: Alignment.topCenter,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color(0xFFEFE7E2).withAlpha(100),
-                        width: 5,
-                      ),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: Image.asset(
-                        'assets/images/bean_brew.png',
-                        width: 100,
-                      ),
-                    ),
-                  ),
+                  child: Applogo(logoWidth: 100, borderWidth: 5),
                 ),
                 SizedBox(height: 30),
                 Align(

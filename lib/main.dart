@@ -45,7 +45,6 @@ class _splashState extends State<splash> {
                 child: child,);
           },transitionDuration: const Duration(milliseconds: 500)
           ),
-
         );
       }
     });
