@@ -1,6 +1,7 @@
 import 'package:coffee_app/Style/color.dart';
 import 'package:coffee_app/Widgets/appLogo.dart';
 import 'package:coffee_app/Widgets/loginField.dart';
+import 'package:coffee_app/registrationScreen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,9 @@ class Loginscreen extends StatefulWidget {
 
 class _LoginscreenState extends State<Loginscreen> {
   void test() {}
+  void _navToRegistration(){
+    Navigator.pushReplacement(context, PageRouteBuilder(pageBuilder: (context,animation,secondaryAnimation)=>RegistrationScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -228,7 +232,7 @@ class _LoginscreenState extends State<Loginscreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('New to Bean & Brew?'),
-                      TextButton(onPressed: test, child: Text('Create Account',style: TextStyle(color: MyColorLib.primary),))
+                      TextButton(onPressed: _navToRegistration, child: Text('Create Account',style: TextStyle(color: MyColorLib.primary),))
                     ],
                   ),
                 )
