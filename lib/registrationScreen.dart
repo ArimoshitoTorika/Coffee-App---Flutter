@@ -3,6 +3,8 @@ import 'package:coffee_app/Widgets/appLogo.dart';
 import 'package:coffee_app/Widgets/loginField.dart';
 import 'package:flutter/material.dart';
 
+import 'homePage.dart';
+
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
 
@@ -11,6 +13,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  void _navToHome(){
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,7 +193,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     child: SizedBox(
                       width: 350,
                       child: ElevatedButton(
-                        onPressed: test,
+                        onPressed: _navToHome,
                         child: Text("Register"),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: MyColorLib.primary,
@@ -212,5 +217,4 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 
-  VoidCallback? test() {}
 }
