@@ -242,7 +242,8 @@ class _LoginscreenState extends State<Loginscreen> {
                         TextButton(onPressed: _navToRegistration, child: Text('Create Account',style: TextStyle(color: MyColorLib.primary),))
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: 60,)
                 ],
               ),
             ),
