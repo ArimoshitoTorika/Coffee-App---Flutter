@@ -1,3 +1,4 @@
+import 'package:coffee_app/Widgets/appLogo.dart';
 import 'package:coffee_app/loginScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +59,7 @@ class _splashState extends State<splash> {
         child: Center(
           child: ClipRRect(
             borderRadius: BorderRadius.circular(80),
-            child: Image.asset('assets/images/bean_brew.png', width: 160),
+            child: Applogo(logoWidth: 160, borderWidth: 5),
           ),
         ),
       ),

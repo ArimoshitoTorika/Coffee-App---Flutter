@@ -7,4 +7,5 @@ class MyColorLib{
   static const Color secondary = Color(0xFFEFE7E2);
   static const Color inverted = Color(0xFF35312D);
   static const Color outline = Color(0xFFD4C2BB);
+  static const Color home_bg = Color(0xFFf1e9de);
 }

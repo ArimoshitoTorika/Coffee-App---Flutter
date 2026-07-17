@@ -1,7 +1,9 @@
 import 'package:coffee_app/Style/color.dart';
 import 'package:coffee_app/Widgets/pfp.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyColorLib.bgColor,
+        backgroundColor: MyColorLib.home_bg,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -61,7 +63,8 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: Expanded(
             child: Container(
-              color: MyColorLib.bgColor,
+              height: 900,
+              color: MyColorLib.home_bg,
               child: Column(
                 children: [
                   Padding(
@@ -109,44 +112,129 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20,),
-                            child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Stack(
+                          // clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              width: 180,
+                              height: 80,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(18),
-                                color: MyColorLib.primary,
+                                color: Colors.deepOrange,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              height: 180,
-                              width: 370,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(18),
-                                child: Image.network(
-                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuDjxaSYYLa1i6OvfwOWirZt40cdpuM5aSm9VlD3PqivJfFYosdOtkC7aU459jp2bsW5I6NN8SLNC4rFkYxnsGU1SK8ZENbZCQ9itpkXFj2nnxCVqkAuy6BuuPSaMUv_PaGs3I_BhBssCItVANjrB6GQQazQxrxuEzM24Nagd9QzHChg3LqkzvB7H4xH0I9L_vfRUtFxFOku42qR0cKF78D_aABAdHkK_5_xIFIiQE-1Hzi5XhI4CfjdnA',
-                                  height: 180,
-                                  fit: BoxFit.cover,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      'assets/icons/cup-soda.svg',
+                                      colorFilter: ColorFilter.mode(
+                                        MyColorLib.secondary,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Text(
+                                      "Pick Up",
+                                      style: TextStyle(
+                                        color: MyColorLib.secondary,shadows: [
+                                          Shadow(
+                                            color: Colors.black87,
+                                            blurRadius: 10,
+                                            offset: Offset(2, 2)
+                                          )
+                                      ]
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                          ),
-                          Container(
-                            color: MyColorLib.primary,
-                            height: 40,
-                            width: 300,
-                          ),
-                          Container(
-                            color: Colors.green,
-                            height: 40,
-                            width: 300,
-                          ),
-                        ],
-                      ),
+                            Positioned(
+                              right: -28,
+                              top: -16,
+                              child: Image.asset(
+                                'assets/images/iced_coffee.png',
+                                width: 140,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          // clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              width: 180,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: Colors.yellow.shade700,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      'assets/icons/coffee.svg',
+                                      colorFilter: ColorFilter.mode(
+                                        MyColorLib.secondary,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Text(
+                                      "Dine In",
+                                        style: TextStyle(
+                                            color: MyColorLib.secondary,shadows: [
+                                          Shadow(
+                                              color: Colors.black87,
+                                              blurRadius: 10,
+                                              offset: Offset(2, 2)
+                                          )
+                                        ]
+                                        ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              right: -12,
+                              top: -50,
+                              child: Image.asset(
+                                'assets/images/hot_coffee.png',
+                                width: 140,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("What's new?",style: TextStyle(color: MyColorLib.primary,fontWeight: FontWeight.w500,fontSize: 18),),
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Container(width: 160,height: 160,decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Colors.deepOrange)),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
